@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Amazon",
+    "desc": "แพลตฟอร์ม Cloud Computing ระดับโลก",
+    "img": "./img/amzn_0.png",
+    "url": "https://www.tradingview.com/symbols/NASDAQ-AMZN/forecast/"
+  },
+  {
+    "name": "Microsoft",
+    "desc": "ผู้นำด้านซอฟต์แวร์ ระบบปฏิบัติการ และ Cloud Azure",
+    "img": "./img/msft_0.png",
+    "url": "https://www.tradingview.com/symbols/NASDAQ-MSFT/forecast/"
+  },
+  {
+    "name": "Google",
+    "desc": "ยักษ์ใหญ่ด้านเสิร์ชเอนจินและบริการออนไลน์ของโลก",
+    "img": "./img/gg_0.png",
+    "url": "https://www.tradingview.com/symbols/NASDAQ-GOOGL/forecast/"
+  },
+  {
+    "name": "Meta",
+    "desc": "บริษัทแม่ของ Facebook, Instagram และ WhatsApp มุ่งสู่โลก Metaverse",
+    "img": "./img/fb_0.png",
+    "url": "https://www.tradingview.com/symbols/NASDAQ-META/forecast/"
+  }
+]
