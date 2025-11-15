@@ -1,35 +1,91 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>แนะนำหุ้น Tech</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tester - User Management</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>กระดานแนะนำหุ้นเทคโนโลยีชั้นนำ</h1>
-    <p>คลิ๊กเพื่อดูรายละเอียดเพิ่มเติม</p>
-  </header>
+    <div class="container">
+        <header>
+            <h1>🚀 User Management API Tester</h1>
+            <p class="subtitle">Test your Flask + MongoDB CRUD operations</p>
+        </header>
 
-  <main id="companyList"></main>
+        <!-- API Configuration -->
+        <section class="api-config">
+            <label for="apiUrl">API Base URL:</label>
+            <input type="text" id="apiUrl" value="https://app-87q3k0clt-flasks-projects-987fd076.vercel.app" placeholder="Enter API URL">
+        </section>
 
-  <div id="overlay" style="display: none;">
-    <article class="overlay-box">
-      <img id="overlayLogo" src="" alt="">
-      <h2 id="overlayTitle"></h2>
-      <p id="overlayDesc"></p>
-      <a id="overlayLink" href="#" target="_blank">ดูกราฟ</a>
-      <button id="closeBtn">ปิด</button>
-    </article>
-  </div>
+        <!-- Users List -->
+        <section class="section">
+            <div class="section-header">
+                <h2>📋 All Users</h2>
+                <button class="btn btn-primary" onclick="loadUsers()">🔄 Refresh</button>
+            </div>
+            <div id="usersList" class="users-grid"></div>
+        </section>
 
-  <footer>
-    © พัฒนาโดย นายนัทธวัฒน์
-  </footer>
-  <script src="script.js"></script>
+        <!-- GET Single User -->
+        <section class="section">
+            <h2>🔍 GET User by ID</h2>
+            <div class="form-group">
+                <input type="text" id="getUserId" placeholder="Enter User ID">
+                <button class="btn btn-secondary" onclick="getUser()">Get User</button>
+            </div>
+            <div id="getUserResult" class="result"></div>
+        </section>
+
+        <!-- POST Create User -->
+        <section class="section">
+            <h2>➕ POST Create New User</h2>
+            <div class="form-grid">
+                <input type="text" id="postUserId" placeholder="Custom ID (optional)">
+                <input type="text" id="postUserName" placeholder="Name *" required>
+                <input type="email" id="postUserEmail" placeholder="Email *" required>
+                <input type="text" id="postUserRole" placeholder="Role">
+            </div>
+            <button class="btn btn-success" onclick="createUser()">Create User</button>
+            <div id="postUserResult" class="result"></div>
+        </section>
+
+        <!-- PUT Update User -->
+        <section class="section">
+            <h2>✏️ PUT Update User</h2>
+            <div class="form-grid">
+                <input type="text" id="putUserId" placeholder="User ID *" required>
+                <input type="text" id="putUserName" placeholder="New Name">
+                <input type="email" id="putUserEmail" placeholder="New Email">
+                <input type="text" id="putUserRole" placeholder="New Role">
+            </div>
+            <button class="btn btn-warning" onclick="updateUser()">Update User</button>
+            <div id="putUserResult" class="result"></div>
+        </section>
+
+        <!-- DELETE User -->
+        <section class="section">
+            <h2>🗑️ DELETE User</h2>
+            <div class="form-group">
+                <input type="text" id="deleteUserId" placeholder="Enter User ID">
+                <button class="btn btn-danger" onclick="deleteUser()">Delete User</button>
+            </div>
+            <div id="deleteUserResult" class="result"></div>
+        </section>
+
+        <!-- Health Check -->
+        <section class="section">
+            <h2>💚 Health Check</h2>
+            <button class="btn btn-info" onclick="checkHealth()">Check API Health</button>
+            <div id="healthResult" class="result"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ for testing Flask + MongoDB API</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
